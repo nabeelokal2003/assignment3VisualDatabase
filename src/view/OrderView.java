@@ -14,6 +14,8 @@ public class OrderView extends JFrame {
     public JTextField customerNameField;
     public JTextField totalAmountField;
     public JTextArea orderDetailsArea;
+    public JLabel customerNameLabel;
+    public JLabel totalAmountLabel;
     public JPanel sizePanel;
     public JPanel crustPanel;
     JComboBox<String> crustBox;
@@ -40,12 +42,27 @@ public class OrderView extends JFrame {
         customerNameField = new JTextField(10);
         totalAmountField = new JTextField(10);
         totalAmountField.setEditable(false);
+
+        customerNameField.setBackground(Color.white);
+        totalAmountField.setBackground(Color.white);
+
+        customerNameField.setForeground(Color.black);
+        totalAmountField.setForeground(Color.black);
+
+        customerNameField.setFont(new Font("Arial", Font.BOLD, 14));
+        totalAmountField.setFont(new Font("Arial", Font.BOLD, 14));
+
         customerPanel.setForeground(clrs.getText());
 
+        customerNameLabel = new JLabel("Customer Name:");
+        totalAmountLabel = new JLabel("Total Amount:");
 
-        customerPanel.add(new JLabel("Customer Name:"));
+        customerNameLabel.setForeground(new Color(143,217,251));
+        totalAmountLabel.setForeground(new Color(143,217,251));
+
+        customerPanel.add(customerNameLabel);
         customerPanel.add(customerNameField);
-        customerPanel.add(new JLabel("Total:"));
+        customerPanel.add(totalAmountLabel);
         customerPanel.add(totalAmountField);
 
 
@@ -66,12 +83,17 @@ public class OrderView extends JFrame {
         JRadioButton smallButton = new JRadioButton("Small");
         smallButton.setIcon(unselectedIcon);
         smallButton.setSelectedIcon(selectedIcon);
+        smallButton.setForeground(Color.white);
+
         JRadioButton mediumButton = new JRadioButton("Medium", true); // Default selected
         mediumButton.setIcon(unselectedIcon);
         mediumButton.setSelectedIcon(selectedIcon);
+        mediumButton.setForeground(Color.white);
+
         JRadioButton largeButton = new JRadioButton("Large");
         largeButton.setIcon(unselectedIcon);
         largeButton.setSelectedIcon(selectedIcon);
+        largeButton.setForeground(Color.white);
 
         // Let Radios function
         ButtonGroup sizeGroup = new ButtonGroup();
@@ -82,10 +104,6 @@ public class OrderView extends JFrame {
         sizePanel.add(smallButton);
         sizePanel.add(mediumButton);
         sizePanel.add(largeButton);
-
-
-//       sizePanel.setBackground(clrs.getBase());
-//       sizePanel.setForeground(clrs.getText());
 
         // Crust selection
         crustPanel = new JPanel(new GridLayout(3 ,1 ));
@@ -98,12 +116,17 @@ public class OrderView extends JFrame {
         JRadioButton panButton = new JRadioButton("Pan");
         panButton.setIcon(unselectedIcon);
         panButton.setSelectedIcon(selectedIcon);
+        panButton.setForeground(Color.white);
+
         JRadioButton stuffedButton = new JRadioButton("Stuffed", true); // Default selected
         stuffedButton.setIcon(unselectedIcon);
         stuffedButton.setSelectedIcon(selectedIcon);
+        stuffedButton.setForeground(Color.white);
+
         JRadioButton regularButton = new JRadioButton("Regular");
         regularButton.setIcon(unselectedIcon);
         regularButton.setSelectedIcon(selectedIcon);
+        regularButton.setForeground(Color.white);
 
         ButtonGroup crustGroup = new ButtonGroup();
 
@@ -115,16 +138,9 @@ public class OrderView extends JFrame {
         crustPanel.add(stuffedButton);
         crustPanel.add(regularButton);
 
-//        crustPanel.setBackground(clrs.getMantle());
-//        crustPanel.setForeground(clrs.getText());
-
-
-//        crustBox.setBackground(clrs.getSky());
-//        crustBox.setForeground(clrs.getText());
 
 // Toppings selection
         JPanel toppingPanel = new JPanel(new GridLayout(2, 3));
-//        toppingPanel.setBorder(BorderFactory.createTitledBorder("Toppings"));
 
 // Set up the TitledBorder with custom colors
         TitledBorder titledToppingsBorder = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(clrs.getSurface0()), "Toppings");
@@ -141,6 +157,7 @@ public class OrderView extends JFrame {
             toppingCheckboxes[i] = new JCheckBox(toppings[i]);
             toppingCheckboxes[i].setIcon(unselectedBoxIcon);
             toppingCheckboxes[i].setSelectedIcon(selectedBoxIcon);
+            toppingCheckboxes[i].setForeground(Color.white);
             toppingPanel.add(toppingCheckboxes[i]);
         }
 

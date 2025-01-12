@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class PizzaView extends JFrame {
     private final CTP clrs;
-    private OrderController newOrderController;
+    private OrderController orderController;
 
     public PizzaView() {
         clrs = new CTP();
@@ -44,7 +44,7 @@ public class PizzaView extends JFrame {
 
     private void openOrderView() {
         view.OrderView orderView = new view.OrderView();
-        newOrderController = new OrderController(new OrderModel(), orderView);
+        orderController = new OrderController(new OrderModel(), orderView);
         orderView.setLocationRelativeTo(orderView.getParent());
         orderView.setVisible(true);
     }

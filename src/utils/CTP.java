@@ -34,10 +34,10 @@ public class CTP {
     }
 
     public CTP() {
-        this.base = Color.CYAN;
-        this.mantle = new Color(0x181825);
+        this.base = new Color(46,111,64);
+        this.mantle = new Color(109,129,150);
         this.crust = new Color(0x11111b);
-        this.text = new Color(0xcdd6f4);
+        this.text = Color.white;
         this.surface = new Color(0x585b70);
         this.sky = Color.orange;
         this.surface2 = new Color(0x585b70);
